@@ -3,7 +3,8 @@ import itertools
 
 def validate_rut(rut):
     clean_rut = re.sub("[^0-9kK-]", "", rut)
-    if not __validate_rut_format(rut): raise Exception
+    if not __validate_rut_format(rut):
+        raise Exception
     splited_rut = clean_rut.split("-")
     return splited_rut[1].upper() == __get_verification_digit_from_rut(splited_rut[0])
 
@@ -26,6 +27,3 @@ def __validate_rut_format(rut):
     search_finish = re.search("-[0-9kK]$", rut)
     search_score = re.search("-{1}", rut)
     return search_start and search_score and search_finish
-
-if __name__ == "__main__":
-    print validate_rut("18023503-5")
