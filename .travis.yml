@@ -1,2 +1,2 @@
 language: python
-script: chile_rut/validator_test.py
+script: python chile_rut/validator_test.py
