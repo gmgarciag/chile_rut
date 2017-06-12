@@ -1,1 +1,1 @@
-from .chile_rut import validate_rut
+from .chile_rut import validate_rut, random_rut, random_ruts, format_rut, verification_digit
