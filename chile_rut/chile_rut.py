@@ -1,5 +1,6 @@
 import re
 import itertools
+import random
 
 def validate_rut(rut):
     clean_rut = re.sub("[^0-9kK-]", "", rut)
@@ -8,6 +9,16 @@ def validate_rut(rut):
     splited_rut = clean_rut.split("-")
     return splited_rut[1].upper() == __get_verification_digit_from_rut(splited_rut[0])
 
+def get_random_rut():
+    rut=str(random.randint(0, 25000000))
+    return rut+"-"+__get_verification_digit_from_rut(rut)
+
+def get_random_ruts(number_of_ruts):
+    ruts = []
+    for i in range(0, number_of_ruts):
+        ruts.append(get_random_rut())
+    return ruts
+    
 def __get_verification_digit_from_rut(rut):
     number_sum = 0
     inv_rut = rut[::-1]

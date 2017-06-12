@@ -2,12 +2,10 @@
 Validator and generator of Chile id
 
 [![Build Status](https://travis-ci.org/gmgarciag/chile_rut.svg?branch=master)](https://travis-ci.org/gmgarciag/chile_rut)
-
 # Instalation
 
 ```
 git clone https://github.com/gmgarciag/chile_rut.git
-
 # In the folder of the package
 python setup.py install
 ```
