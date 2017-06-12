@@ -1,0 +1,1 @@
+from .chile_rut import validate_rut
