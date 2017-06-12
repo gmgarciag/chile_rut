@@ -7,14 +7,14 @@ def validate_rut(rut):
     splited_rut = clean_rut.split("-")
     return splited_rut[1].upper() == __verification_digit_from_rut(splited_rut[0])
 
-def get_random_rut():
+def random_rut():
     rut=str(random.randint(0, 25000000))
     return rut+"-"+__verification_digit_from_rut(rut)
 
-def get_random_ruts(number_of_ruts):
+def random_ruts(number_of_ruts):
     ruts = []
     for i in range(0, number_of_ruts):
-        ruts.append(get_random_rut())
+        ruts.append(random_rut())
     return ruts
 
 def format_rut(rut):
@@ -28,6 +28,11 @@ def format_rut(rut):
         for i in range(1, final+large/3):
             rut = rut[:(large-3*i)]+"."+rut[(large-3*i):]
     return rut+"-"+digit
+
+def verification_digit(rut):
+    if not re.search("^[0-9]",rut):
+        raise Exception
+    return __verification_digit_from_rut(str(rut))
     
 def __verification_digit_from_rut(rut):
     number_sum = 0
