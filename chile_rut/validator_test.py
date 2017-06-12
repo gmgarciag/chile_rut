@@ -167,5 +167,12 @@ class TestValidator(unittest.TestCase):
       for rut in chile_rut.get_random_ruts(1000):
             self.assertTrue(chile_rut.validate_rut(rut))
 
+    def test_format(self):
+        correct_ruts = [("7-1","7-1"),("35-4","35-4"),("921-9","921-9"),("4199-0", "4.199-0"),
+                        ("88541-6","88.541-6"),("194486-3", "194.486-3"),("1287299-7","1.287.299-7"),
+                        ("1345678-9", ("1.345.678-9")),("12345678-9",("12.345.678-9")),
+                        ("123456789-9",("123.456.789-9")),("1123456789-9", ("1.123.456.789-9"))]
+        for rut in correct_ruts:
+            self.assertTrue(chile_rut.format_rut(rut[0])==rut[1])
 if __name__ == '__main__':
     unittest.main()

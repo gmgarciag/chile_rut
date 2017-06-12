@@ -36,3 +36,11 @@ chile_rut.get_random_rut()
 chile_rut.get_random_ruts(number_of_ruts)
 # return ["6265837-1", ""23289335-4", ...]
 ```
+
+## Format rut
+```
+import chile_rut
+
+chile_rut.format_rut("12345678-9")
+return "12.345.678-9"
+```
