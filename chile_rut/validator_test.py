@@ -4,7 +4,7 @@ import itertools
 
 class TestValidator(unittest.TestCase):
 
-    def test_ok(self):
+    def test_validate_ok(self):
         correct_ruts = ["6265837-1", "23289335-4", "21777921-9", "19442199-0", "23288541-6", "12194486-3", "12870299-7",
                         "6465375-k", "17268390-8", "8755721-9", "6034070-6", "5522858-2", "14420680-0", "16409917-2",
                         "13995949-3", "14194957-8", "10800123-2", "18475855-5", "13311020-8", "11746715-5",
@@ -162,6 +162,10 @@ class TestValidator(unittest.TestCase):
             if rut[-1:] == str(next_digit):
                 next_digit = next(validator_digit)
             self.assertFalse(chile_rut.validate_rut(rut[:-1]+str(next_digit)))
+
+    def test_random_ok(self):
+      for rut in chile_rut.get_random_ruts(1000):
+            self.assertTrue(chile_rut.validate_rut(rut))
 
 if __name__ == '__main__':
     unittest.main()

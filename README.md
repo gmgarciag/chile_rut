@@ -11,7 +11,7 @@ python setup.py install
 ```
 
 # Usage
-
+## Validate rut
 ```
 import chile_rut
 
@@ -25,4 +25,14 @@ chile_rut.validate_rut("12.345.678-9")
 # return False
 chile_rut.validate_rut("6/265/837-1")
 # return True
+```
+
+## Random rut generator
+```
+import chile_rut
+
+chile_rut.get_random_rut()
+# return "6265837-1"
+chile_rut.get_random_ruts(number_of_ruts)
+# return ["6265837-1", ""23289335-4", ...]
 ```
