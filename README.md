@@ -5,6 +5,8 @@ Validator and generator of Chile id
 # Instalation
 
 ```
+pip install chile_rut
+
 git clone https://github.com/gmgarciag/chile_rut.git
 # In the folder of the package
 python setup.py install
