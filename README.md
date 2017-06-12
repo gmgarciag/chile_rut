@@ -44,3 +44,13 @@ import chile_rut
 chile_rut.format_rut("12345678-9")
 return "12.345.678-9"
 ```
+
+## Verification digit
+```
+import chile_rut
+
+chile_rut.verification_digit("6265837")
+# return "1"
+chile_rut.verification_digit("14065549")
+# return "K"
+```
