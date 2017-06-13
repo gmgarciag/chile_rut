@@ -1,4 +1,7 @@
 language: python
-script: py.test
+install:
+  - pip install pytest-cov
+script: 
+  - py.test --cov=./
 after_sucess:
-  - CODECLIMATE_REPO_TOKEN=5462a1e1b11a362e6bb02cec9029ea8bf3eef790ac954be720a19814f8362af2 codeclimate-test-reporter
+  - codecov
