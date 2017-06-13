@@ -25,7 +25,7 @@ def format_rut(rut):
     if large > 3:
         final = 1
         if large%3 == 0: final=0
-        for i in range(1, final+large/3):
+        for i in range(1, final+int(large/3)):
             rut = rut[:(large-3*i)]+"."+rut[(large-3*i):]
     return rut+"-"+digit
 
