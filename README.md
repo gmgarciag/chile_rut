@@ -6,7 +6,11 @@ Validator and generator of Chile id
 
 ```
 pip install chile_rut
+```
 
+or
+
+```
 git clone https://github.com/gmgarciag/chile_rut.git
 # In the folder of the package
 python setup.py install
@@ -44,7 +48,7 @@ chile_rut.get_random_ruts(number_of_ruts)
 import chile_rut
 
 chile_rut.format_rut("12345678-9")
-return "12.345.678-9"
+# return "12.345.678-9"
 ```
 
 ## Verification digit
